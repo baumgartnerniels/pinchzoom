@@ -87,7 +87,6 @@ var definePinchZoom = function () {
    * @constructor
    */
   var PinchZoom = function (el, options) {
-      console.log("PinchZoom");
       this.el = el;
       this.zoomFactor = 1;
       this.lastScale = 1;
@@ -560,7 +559,8 @@ var definePinchZoom = function () {
      */
     updateAspectRatio: function () {
       this.unsetContainerY();
-      this.setContainerY(this.container.parentElement.offsetHeight);
+      //   this.setContainerY(this.container.parentElement.offsetHeight);
+      this.setContainerY(this.getContainerX() / this.getAspectRatio());
     },
 
     /**
